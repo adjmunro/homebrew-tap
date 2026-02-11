@@ -74,34 +74,34 @@ class Webtags < Formula
 
   def caveats
     <<~EOS
-      WebTags native messaging host has been installed.
+      WebTags native messaging host has been installed at: #{bin}/webtags-host
 
-      To complete setup:
+      🚀 Quick Setup (Recommended)
+      ═══════════════════════════════════════════════════════════════
 
-      1. Install the native messaging manifest for your browser:
+      Run this command to automatically configure all your browsers:
 
-         Chrome/Chromium:
-           mkdir -p ~/.config/google-chrome/NativeMessagingHosts
-           ln -sf #{prefix}/chrome-native-messaging/com.webtags.host.json \\
-             ~/.config/google-chrome/NativeMessagingHosts/com.webtags.host.json
+        curl -sSL https://raw.githubusercontent.com/adjmunro/webtags/master/scripts/setup-manifests.sh | bash
 
-         Firefox:
-           mkdir -p ~/.mozilla/native-messaging-hosts
-           ln -sf #{prefix}/firefox-native-messaging/com.webtags.host.json \\
-             ~/.mozilla/native-messaging-hosts/com.webtags.host.json
+      This detects and configures:
+        ✓ Chrome, Edge, Brave, Chromium (including ungoogled variants)
+        ✓ Firefox, Zen Browser, Waterfox, LibreWolf
+        ✓ Safari
 
-         Safari:
-           mkdir -p ~/Library/Application\\ Support/Mozilla/NativeMessagingHosts
-           ln -sf #{prefix}/safari-native-messaging/com.webtags.host.json \\
-             ~/Library/Application\\ Support/Mozilla/NativeMessagingHosts/com.webtags.host.json
+      📖 Manual Setup
+      ═══════════════════════════════════════════════════════════════
 
-      2. Install the browser extension (see project README for instructions)
+      If you prefer manual configuration:
+        https://github.com/adjmunro/webtags/blob/master/docs/BROWSER_SETUP.md
 
-      3. Configure GitHub authentication in the extension settings
+      📦 Next Steps
+      ═══════════════════════════════════════════════════════════════
 
-      The native host binary is installed at: #{bin}/webtags-host
+      1. Run the setup script above (or manually configure)
+      2. Install the WebTags browser extension (coming soon)
+      3. Extension will automatically connect to the native host
 
-      For more information, visit: https://github.com/adjmunro/webtags
+      For more information: https://github.com/adjmunro/webtags
     EOS
   end
 
