@@ -1,44 +1,44 @@
 # Homebrew Tap
 
-Personal Homebrew tap for various projects.
+Personal Homebrew tap for custom formulas.
 
-## Installation
+## For Users
+
+### Installation
 
 ```bash
-brew tap adjmunro/tap https://github.com/adjmunro/homebrew-tap
+brew tap adjmunro/tap
 ```
 
-## Available Formulas
+### Available Formulas
 
-### WebTags
+- **webtags** - Git-synced browser bookmark tagging extension
 
-Git-synced browser bookmark tagging extension with native messaging host.
-
+Install with:
 ```bash
 brew install webtags
 ```
 
-This installs:
-- `webtags-host` - Native messaging host binary
-- Native messaging manifests for Chrome/Firefox/Safari
-- Setup scripts and documentation
+See [Tap Usage](docs/homebrew/tap-usage.md) for more details.
 
-After installation, follow the setup instructions to configure the browser extension.
+## For Developers
 
-## Updating Formulas
+- **[Formula Development](docs/homebrew/formula-development.md)** - Create and test formulas
+- **[Releasing](docs/homebrew/releasing.md)** - Release new versions
+- **[Project Commands](docs/development/project-commands.md)** - `just` command reference
+- **[Git Workflow](docs/development/git-workflow.md)** - Branching and worktrees
+- **[Formula Conventions](docs/conventions/formula-conventions.md)** - Writing standards
 
-When releasing a new version:
-
-1. Update the formula with new version and SHA256
-2. Commit and push to the tap repository
-3. Users can upgrade with `brew upgrade webtags`
-
-## Formula Development
-
-To test formulas locally:
-
+Quick start for development:
 ```bash
-brew install --build-from-source ./Formula/webtags.rb
+# Install just command runner
+brew install just
+
+# See all available commands
+just
+
+# Test a formula locally
+just test-formula webtags
 ```
 
 ## License

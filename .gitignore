@@ -7,3 +7,6 @@
 *.swp
 *.swo
 *~
+
+# Agent symlinks (CLAUDE.md -> AGENTS.md)
+CLAUDE.md
