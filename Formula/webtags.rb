@@ -1,10 +1,10 @@
 class Webtags < Formula
   desc "Git-synced browser bookmark tagging with native messaging host"
   homepage "https://github.com/adjmunro/webtags"
-  url "https://github.com/adjmunro/webtags/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "8284636c911c3c8e0cdbce1c449e419b79c95cc7bfee19d2818b7ae5549284ff"
+  url "https://github.com/adjmunro/webtags/archive/refs/tags/v0.1.1.tar.gz"
+  sha256 "c018b3399d5c3891082ed6c8233e7c87a84d1dcdd96ea50c46789adb9775b7b0"
   license "MIT"
-  version "0.1.0"
+  version "0.1.1"
 
   depends_on "rust" => :build
 
