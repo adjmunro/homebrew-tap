@@ -1,13 +1,13 @@
 class Webtags < Formula
   desc "Git-synced browser bookmark tagging with native messaging host"
   homepage "https://github.com/adjmunro/webtags"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/adjmunro/webtags/releases/download/v0.1.1/webtags-0.1.1-aarch64-macos.tar.gz"
-      sha256 "b94ffdceb6b5da4315df57fd621c61d30c5341e4f9510eb7497abfa79b5d113c"
+      url "https://github.com/adjmunro/webtags/releases/download/v0.1.2/webtags-0.1.2-aarch64-macos.tar.gz"
+      sha256 "6af1754eb5ae4334575945a865a8d6cce3e4a875538c2f7e43e06c4c8aa282b5"
     else
       odie "Intel macOS is not supported. Please use an Apple Silicon Mac or build from source."
     end
@@ -15,8 +15,8 @@ class Webtags < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/adjmunro/webtags/releases/download/v0.1.1/webtags-0.1.1-x86_64-linux.tar.gz"
-      sha256 "53c806df5fb8f6f0a8593f73235dd2260b2057d1e165135162a4b43130b2e767"
+      url "https://github.com/adjmunro/webtags/releases/download/v0.1.2/webtags-0.1.2-x86_64-linux.tar.gz"
+      sha256 "005ad7a4ec81ef3574031371f42cef21bb2e6c76fdd2f9de52b8e0f7e653be10"
     else
       odie "Only x86_64 Linux is supported. Please build from source for other architectures."
     end
