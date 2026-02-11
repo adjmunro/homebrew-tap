@@ -1,18 +1,30 @@
 class Webtags < Formula
   desc "Git-synced browser bookmark tagging with native messaging host"
   homepage "https://github.com/adjmunro/webtags"
-  url "https://github.com/adjmunro/webtags/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "c018b3399d5c3891082ed6c8233e7c87a84d1dcdd96ea50c46789adb9775b7b0"
-  license "MIT"
   version "0.1.1"
+  license "MIT"
 
-  depends_on "rust" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "https://github.com/adjmunro/webtags/releases/download/v0.1.1/webtags-0.1.1-aarch64-macos.tar.gz"
+      sha256 "f9511d7e78b51e9b93b2e6dd9d0a9266781f071a4ad72c528c485b272919db35"
+    else
+      odie "Intel macOS is not supported. Please use an Apple Silicon Mac or build from source."
+    end
+  end
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/adjmunro/webtags/releases/download/v0.1.1/webtags-0.1.1-x86_64-linux.tar.gz"
+      sha256 "53c806df5fb8f6f0a8593f73235dd2260b2057d1e165135162a4b43130b2e767"
+    else
+      odie "Only x86_64 Linux is supported. Please build from source for other architectures."
+    end
+  end
 
   def install
-    # Build the native messaging host
-    cd "native-host" do
-      system "cargo", "install", "--locked", "--root", prefix, "--path", "."
-    end
+    # Install the pre-built binary
+    bin.install "webtags-host"
 
     # Install native messaging manifests
     install_native_messaging_manifests
@@ -94,7 +106,8 @@ class Webtags < Formula
   end
 
   test do
-    # Test that the binary exists and runs
-    assert_match "webtags-host", shell_output("#{bin}/webtags-host --help 2>&1", 1)
+    # Test that the binary exists and responds to status message
+    output = pipe_output("#{bin}/webtags-host 2>/dev/null", "\x11\x00\x00\x00{\"type\":\"status\"}", 0)
+    assert_match "success", output
   end
 end
