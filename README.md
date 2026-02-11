@@ -1,23 +1,42 @@
-# Homebrew Tap
+# adjmunro/tap - Homebrew Tap
+
+[![Homebrew](https://img.shields.io/badge/Homebrew-tap-orange)](https://github.com/adjmunro/homebrew-tap)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Personal Homebrew tap for custom formulas.
 
 ## For Users
 
-### Installation
+### Quick Start
 
 ```bash
+# Add tap and install
 brew tap adjmunro/tap
+brew install webtags
 ```
 
 ### Available Formulas
 
-- **webtags** - Git-synced browser bookmark tagging extension
+#### [WebTags](https://github.com/adjmunro/webtags) - Git-Synced Browser Bookmark Tagging
 
-Install with:
+Transform your browser bookmarks into a powerful tagging system with automatic Git/GitHub synchronization.
+
+**Features:**
+- 🏷️ Hierarchical tag system
+- 🔄 Cross-device sync via Git
+- 🔒 Complete data sovereignty
+- 🌐 Works with Chrome, Edge, Firefox, Zen, Brave, Safari
+- ⚡ Fast binary installation (~2 seconds)
+
+**Quick Setup:**
 ```bash
 brew install webtags
+curl -sSL https://raw.githubusercontent.com/adjmunro/webtags/master/scripts/setup-manifests.sh | bash
 ```
+
+**Documentation:** [github.com/adjmunro/webtags](https://github.com/adjmunro/webtags)
+
+---
 
 See [Tap Usage](docs/homebrew/tap-usage.md) for more details.
 
