@@ -7,7 +7,7 @@ class Webtags < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/adjmunro/webtags/releases/download/v0.1.1/webtags-0.1.1-aarch64-macos.tar.gz"
-      sha256 "f9511d7e78b51e9b93b2e6dd9d0a9266781f071a4ad72c528c485b272919db35"
+      sha256 "b94ffdceb6b5da4315df57fd621c61d30c5341e4f9510eb7497abfa79b5d113c"
     else
       odie "Intel macOS is not supported. Please use an Apple Silicon Mac or build from source."
     end
